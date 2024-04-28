@@ -47,3 +47,8 @@ class Antureidentiedot(SQLModel):
     id: int
     lohko_ID: int
     virhetila: bool
+
+class Mittatulos_luo(SQLModel):
+    anturi_ID: int
+    lampotila: Decimal = Field(default=0, max_digits=3, decimal_places=1)
+    aikaleima: datetime

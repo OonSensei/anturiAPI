@@ -14,10 +14,10 @@ def create_lohko(*, session: Session = Depends(get_session), lohko_in: LohkoBase
     return lohko
 
 
-@router.get("/lohkot", response_model=list[LohkoDB])
-def get_lohkot(*, session: Session = Depends(get_session), lohko: str = ""):
-    lohko = lohko_crud.get_lohkot(session, lohko)
-    return lohko
+# @router.get("/lohkot", response_model=list[LohkoDB])
+# def get_lohkot(*, session: Session = Depends(get_session), lohko: str = ""):
+#     lohko = lohko_crud.get_lohkot(session, lohko)
+#     return lohko
 
 @router.get("/lohkot/{id}", response_model=list[Lohkotiedot])
 def get_lohko(*, session: Session = Depends(get_session), id: int):

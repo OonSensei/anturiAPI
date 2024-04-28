@@ -1,8 +1,8 @@
 from fastapi import HTTPException
-from database.models import MittatulosBase
+from database.models import MittatulosBase, Mittatulos_luo
 from sqlmodel import Session, select
 
-def create_mittatulos(session: Session, mittatulos_in: MittatulosBase):
+def create_mittatulos(session: Session, mittatulos_in: Mittatulos_luo):
     mittatulos_db = MittatulosBase.model_validate(mittatulos_in)
     session.add(mittatulos_db)
     session.commit()

@@ -10,11 +10,11 @@ def create_lohko(session: Session, lohkot_in: LohkoCreate):
     session.refresh(lohko_db)
     return lohko_db
 
-def get_lohkot(session: Session, lohko: str = ""):
-    if lohko != "":
-        return session.exec(select(LohkoDB).where(LohkoDB.lohko ==
-        lohko)).all()
-    return session.exec(select(LohkoDB)).all()
+# def get_lohkot(session: Session, lohko: str = ""):
+#     if lohko != "":
+#         return session.exec(select(LohkoDB).where(LohkoDB.lohko ==
+#         lohko)).all()
+#     return session.exec(select(LohkoDB)).all()
 
 def get_lohko(session: Session, id: int):
     return session.exec(select(AnturiDB).where(AnturiDB.lohko_ID == id)).all()
